@@ -1,0 +1,16 @@
+<% include header %>
+	<div class="container">
+		<form class="form-inline">
+		  <div class="form-group">
+		    <label for="blogTitle">标题:</label>
+		    <input type="text" class="form-control" id="blogTitle" placeholder="标题">
+		  </div>
+		</form>
+		<div id="txtEditor"></div>  
+		<%if(pageType=="rewrite"){%>
+		<button type="button" id="publish" class="btn btn-info">完成</button>
+		<%}else{%>
+		<button type="button" id="publish" class="btn btn-info">发布</button>
+		<%}%>
+	</div>
+  <% include footer %>

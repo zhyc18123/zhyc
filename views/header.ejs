@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+ 	<meta charset="UTF-8">
+ 	<title>个人博客</title>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css">
+      <% styles.forEach(function(css) { %>
+      <link rel="stylesheet" href="<%= css %>">
+      <% }) %>
+        <link rel="stylesheet" href="../css/style.css">
+ 	<link href="http://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
+
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+  	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+  	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  	<!--[if lt IE 9]>
+          <link href="css/bootstrap.css" rel="stylesheet">
+  	  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  	  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body>
+
+  <div class="navbar  navbar-static-top">
+        <div class="container topxx logreg" style="font-size:12px"> 
+        <ul class="nav navbar-nav navbar-right pull-right">
+        <%if(!locals.hasLogin){%>
+            <li><a href="/register" id="registerLink">注册</a></li>
+            <li style="position:relative; top:15px"> |</li>
+            <li><a href="/login" id="loginLink">登录</a></li>
+            <%}else{%>
+            <li class="welcome"><span>欢迎<%=user.tel%></span></li>
+            <li><button id="logoutLink">注销</button></li>
+            <%}%>
+        </ul>
+    </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle  bardrop" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <a class="navbar-brand logo" href="/"></a> 
+            </div>
+
+            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/about">关于我</a></li>
+                    <li><a href="/blog">写博文</a></li>
+                    <li><a href="/personcenter">个人中心</a></li>
+                    <li><a href="/personblog">我的博客</a></li>
+                </ul>
+                
+            </div>
+        </div>
+   </div>

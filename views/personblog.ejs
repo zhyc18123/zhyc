@@ -1,0 +1,53 @@
+
+  <% include header %>
+  
+   <div class="container">
+	<div class="row">
+	  <div class="">
+	  <h4>文章列表</h4>
+	  <hr>
+	  <%blogList.forEach(function(blog){%>
+	  <div class="row">
+	  <input type="hidden" id="blogId" value="<%=blog._id%>">
+		  <div class="col-md-3 col-xs-4 person-head">
+		  	<a href="#" class="thumbnail ">
+			      <img src="img/head.png" alt="...">
+			      <a href="#" class="btn btn-primary" id="rewriteBlog" role="button">编辑</a>
+			       <a href="#" class="btn btn-danger" id="deleteBlog" role="button">删除</a>
+			</a>
+		  </div>
+		  <div class="col-md-9 col-xs-12">
+		  	<h4 class="blog-title"><a href="/"><%=blog.blogTitle%></a></h4>
+		  	<!-- <p class="blogText"></p> -->
+		  	<div class="blogText" data-val="<%=blog.blogText%>"><%-blog.blogText%></div>
+		  	<div class="tip-list">
+				<div class="col-md-5 col-xs-12">
+					<div class="col-md-6 col-xs-6">
+						<img src="img/newsbg01.png" alt="">
+						<span>个人博客</span>
+					</div>
+					<div class="col-md-6 col-xs-6">
+						<img src="img/newsbg02.png" alt="">
+						<span>2016-07-21</span>
+					</div>
+				</div>
+				<div class="col-md-5 col-md-offset-2  col-xs-12">
+					<div class="col-md-6 col-xs-6">
+						<img src="img/newsbg03.png" alt="">
+						<span>评论(30)</span>
+					</div>
+					<div class="col-md-6 col-xs-6">
+						<img src="img/newsbg04.png" alt="">
+						<span>浏览(159)</span>
+					</div>
+				</div>
+			</div>
+		  </div>
+	  </div>
+	  <hr>
+	  <%})%>
+	  </div>
+	</div>
+   </div>
+  <% include footer %>
+
